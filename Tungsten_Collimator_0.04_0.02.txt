@@ -1,0 +1,389 @@
+#------------------- Tungsten definition -----------------------
+#b:Ma/MyTungsten/BuildFromMaterials = "True"
+#sv:Ma/MyTungsten/Components=3 "G4_W" "G4_Ni" "G4_Cu" 
+#uv:Ma/MyTungsten/Fractions=3 0.95 0.035 0.015
+#d:Ma/MyTungsten/Density=17.5 g/cm3
+#s:Ma/MyTungsten/DefaultColor="indigo"
+
+#----------------Tungsten Collimator -------------------------------#
+s:Ge/MyCollimator/Parent   = "World"
+s:Ge/MyCollimator/Type     = "TsBox"
+s:Ge/MyCollimator/Material ="MyTungsten"
+d:Ge/MyCollimator/HLX      = 5.25 cm        
+d:Ge/MyCollimator/HLY      = 1.5748 cm
+d:Ge/MyCollimator/HLZ      = 2.0 cm   
+d:Ge/MyCollimator/TransX   = 0.0 m
+d:Ge/MyCollimator/TransY   = 0.0 m
+d:Ge/MyCollimator/TransZ   = 2.0 cm      # change trans z
+d:Ge/MyCollimator/RotX     = 0.0 deg
+d:Ge/MyCollimator/RotY     = 0.0 deg
+d:Ge/MyCollimator/RotZ     = 0.0 deg
+#b:Ge/MyCollimator/Invisible = "True"
+s:Ge/MyCollimator/DrawingStyle = "Solid"
+s:Ge/MyCollimator/Color        = "transparentgreen"
+
+
+#---------------- 1 Slit In The Collimator -------------------------------#
+s:Ge/MySlit1/Parent   = "MyCollimator"
+s:Ge/MySlit1/Type     = "TsBox"
+s:Ge/MySlit1/Material ="Air"
+d:Ge/MySlit1/HLX      = 2.5 cm        
+d:Ge/MySlit1/HLY      = 0.0254 cm
+d:Ge/MySlit1/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit1/TransX   = 0.0 cm
+d:Ge/MySlit1/TransY   = 0.0762 cm
+d:Ge/MySlit1/TransZ   = 0.0 cm
+d:Ge/MySlit1/RotX     = 0.0 deg
+d:Ge/MySlit1/RotY     = 0.0 deg
+d:Ge/MySlit1/RotZ     = 0.0 deg
+s:Ge/MySlit1/DrawingStyle = "Solid"
+s:Ge/MySlit1/Color        = "transparentred"
+#b:Ge/MySlit1/Invisible = "True"
+#---------------- 2 Slit In The Collimator -------------------------------#
+s:Ge/MySlit2/Parent   = "MyCollimator"
+s:Ge/MySlit2/Type     = "TsBox"
+s:Ge/MySlit2/Material ="Air"
+d:Ge/MySlit2/HLX      = 2.5 cm        
+d:Ge/MySlit2/HLY      = 0.0254 cm
+d:Ge/MySlit2/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator    
+d:Ge/MySlit2/TransX   = 0.0 cm
+d:Ge/MySlit2/TransY   = 0.2286 cm
+d:Ge/MySlit2/TransZ   = 0.0 cm
+d:Ge/MySlit2/RotX     = 0.0 deg
+d:Ge/MySlit2/RotY     = 0.0 deg
+d:Ge/MySlit2/RotZ     = 0.0 deg
+s:Ge/MySlit2/DrawingStyle = "Solid"
+s:Ge/MySlit2/Color        = "transparentred"
+#b:Ge/MySlit2/Invisible = "True"
+
+
+
+#---------------- 3 Slit In The Collimator -------------------------------#
+s:Ge/MySlit3/Parent   = "MyCollimator"
+s:Ge/MySlit3/Type     = "TsBox"
+s:Ge/MySlit3/Material ="Air"
+d:Ge/MySlit3/HLX      = 2.5 cm        
+d:Ge/MySlit3/HLY      = 0.0254 cm
+d:Ge/MySlit3/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit3/TransX   = 0.0 cm
+d:Ge/MySlit3/TransY   = 0.381 cm
+d:Ge/MySlit3/TransZ   = 0.0 cm
+d:Ge/MySlit3/RotX     = 0.0 deg
+d:Ge/MySlit3/RotY     = 0.0 deg
+d:Ge/MySlit3/RotZ     = 0.0 deg
+s:Ge/MySlit3/DrawingStyle = "Solid"
+s:Ge/MySlit3/Color        = "transparentred"
+#b:Ge/MySlit3/Invisible = "True"
+
+#---------------- 4 Slit In The Collimator -------------------------------#
+s:Ge/MySlit4/Parent   = "MyCollimator"
+s:Ge/MySlit4/Type     = "TsBox"
+s:Ge/MySlit4/Material ="Air"
+d:Ge/MySlit4/HLX      = 2.5 cm        
+d:Ge/MySlit4/HLY      = 0.0254 cm
+d:Ge/MySlit4/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit4/TransX   = 0.0 cm
+d:Ge/MySlit4/TransY   = 0.5334 cm
+d:Ge/MySlit4/TransZ   = 0.0 cm
+d:Ge/MySlit4/RotX     = 0.0 deg
+d:Ge/MySlit4/RotY     = 0.0 deg
+d:Ge/MySlit4/RotZ     = 0.0 deg
+s:Ge/MySlit4/DrawingStyle = "Solid"
+s:Ge/MySlit4/Color        = "transparentred"
+#b:Ge/MySlit4/Invisible = "True"
+
+#---------------- 5 Slit In The Collimator -------------------------------#
+s:Ge/MySlit5/Parent   = "MyCollimator"
+s:Ge/MySlit5/Type     = "TsBox"
+s:Ge/MySlit5/Material ="Air"
+d:Ge/MySlit5/HLX      = 2.5 cm        
+d:Ge/MySlit5/HLY      = 0.0254 cm
+d:Ge/MySlit5/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit5/TransX   = 0.0 cm
+d:Ge/MySlit5/TransY   = 0.6858 cm
+d:Ge/MySlit5/TransZ   = 0.0 cm
+d:Ge/MySlit5/RotX     = 0.0 deg
+d:Ge/MySlit5/RotY     = 0.0 deg
+d:Ge/MySlit5/RotZ     = 0.0 deg
+s:Ge/MySlit5/DrawingStyle = "Solid"
+s:Ge/MySlit5/Color        = "transparentred"
+#b:Ge/MySlit5/Invisible = "True"
+
+#---------------- 6 Slit In The Collimator -------------------------------#
+s:Ge/MySlit6/Parent   = "MyCollimator"
+s:Ge/MySlit6/Type     = "TsBox"
+s:Ge/MySlit6/Material ="Air"
+d:Ge/MySlit6/HLX      = 2.5 cm        
+d:Ge/MySlit6/HLY      = 0.0254 cm
+d:Ge/MySlit6/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit6/TransX   = 0.0 cm
+d:Ge/MySlit6/TransY   = 0.8382 cm
+d:Ge/MySlit6/TransZ   = 0.0 cm
+d:Ge/MySlit6/RotX     = 0.0 deg
+d:Ge/MySlit6/RotY     = 0.0 deg
+d:Ge/MySlit6/RotZ     = 0.0 deg
+s:Ge/MySlit6/DrawingStyle = "Solid"
+s:Ge/MySlit6/Color        = "transparentred"
+#b:Ge/MySlit6/Invisible = "True"
+
+#---------------- 7 Slit In The Collimator -------------------------------#
+s:Ge/MySlit7/Parent   = "MyCollimator"
+s:Ge/MySlit7/Type     = "TsBox"
+s:Ge/MySlit7/Material ="Air"
+d:Ge/MySlit7/HLX      = 2.5 cm        
+d:Ge/MySlit7/HLY      = 0.0254 cm
+d:Ge/MySlit7/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit7/TransX   = 0.0 cm
+d:Ge/MySlit7/TransY   = 0.9906 cm
+d:Ge/MySlit7/TransZ   = 0.0 cm
+d:Ge/MySlit7/RotX     = 0.0 deg
+d:Ge/MySlit7/RotY     = 0.0 deg
+d:Ge/MySlit7/RotZ     = 0.0 deg
+s:Ge/MySlit7/DrawingStyle = "Solid"
+s:Ge/MySlit7/Color        = "transparentred"
+#b:Ge/MySlit7/Invisible = "True"
+
+#---------------- 8 Slit In The Collimator -------------------------------#
+s:Ge/MySlit8/Parent   = "MyCollimator"
+s:Ge/MySlit8/Type     = "TsBox"
+s:Ge/MySlit8/Material ="Air"
+d:Ge/MySlit8/HLX      = 2.5 cm        
+d:Ge/MySlit8/HLY      = 0.0254 cm
+d:Ge/MySlit8/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit8/TransX   = 0.0 cm
+d:Ge/MySlit8/TransY   = 1.143 cm
+d:Ge/MySlit8/TransZ   = 0.0 cm
+d:Ge/MySlit8/RotX     = 0.0 deg
+d:Ge/MySlit8/RotY     = 0.0 deg
+d:Ge/MySlit8/RotZ     = 0.0 deg
+s:Ge/MySlit8/DrawingStyle = "Solid"
+s:Ge/MySlit8/Color        = "transparentred"
+#b:Ge/MySlit8/Invisible = "True"
+
+#---------------- 9 Slit In The Collimator -------------------------------#
+s:Ge/MySlit9/Parent   = "MyCollimator"
+s:Ge/MySlit9/Type     = "TsBox"
+s:Ge/MySlit9/Material ="Air"
+d:Ge/MySlit9/HLX      = 2.5 cm        
+d:Ge/MySlit9/HLY      = 0.0254 cm
+d:Ge/MySlit9/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit9/TransX   = 0.0 cm
+d:Ge/MySlit9/TransY   = 1.2954 cm
+d:Ge/MySlit9/TransZ   = 0.0 cm
+d:Ge/MySlit9/RotX     = 0.0 deg
+d:Ge/MySlit9/RotY     = 0.0 deg
+d:Ge/MySlit9/RotZ     = 0.0 deg
+s:Ge/MySlit9/DrawingStyle = "Solid"
+s:Ge/MySlit9/Color        = "transparentred"
+#b:Ge/MySlit9/Invisible = "True"
+
+#---------------- 10 Slit In The Collimator -------------------------------#
+s:Ge/MySlit10/Parent   = "MyCollimator"
+s:Ge/MySlit10/Type     = "TsBox"
+s:Ge/MySlit10/Material ="Air"
+d:Ge/MySlit10/HLX      = 2.5 cm        
+d:Ge/MySlit10/HLY      = 0.0254 cm
+d:Ge/MySlit10/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit10/TransX   = 0.0 cm
+d:Ge/MySlit10/TransY   = 1.4478 cm
+d:Ge/MySlit10/TransZ   = 0.0 cm
+d:Ge/MySlit10/RotX     = 0.0 deg
+d:Ge/MySlit10/RotY     = 0.0 deg
+d:Ge/MySlit10/RotZ     = 0.0 deg
+s:Ge/MySlit10/DrawingStyle = "Solid"
+s:Ge/MySlit10/Color        = "transparentred"
+#b:Ge/MySlit10/Invisible = "True"
+
+
+#---------------- 11 Slit In The Collimator -------------------------------#
+s:Ge/MySlit11/Parent   = "MyCollimator"
+s:Ge/MySlit11/Type     = "TsBox"
+s:Ge/MySlit11/Material ="Air"
+d:Ge/MySlit11/HLX      = 2.5 cm        
+d:Ge/MySlit11/HLY      = 0.0254 cm
+d:Ge/MySlit11/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit11/TransX   = 0.0 cm
+d:Ge/MySlit11/TransY   = -0.0762 cm
+d:Ge/MySlit11/TransZ   = 0.0 cm
+d:Ge/MySlit11/RotX     = 0.0 deg
+d:Ge/MySlit11/RotY     = 0.0 deg
+d:Ge/MySlit11/RotZ     = 0.0 deg
+s:Ge/MySlit11/DrawingStyle = "Solid"
+s:Ge/MySlit11/Color        = "transparentred"
+#b:Ge/MySlit11/Invisible = "True"
+#---------------- 12 Slit In The Collimator -------------------------------#
+s:Ge/MySlit12/Parent   = "MyCollimator"
+s:Ge/MySlit12/Type     = "TsBox"
+s:Ge/MySlit12/Material ="Air"
+d:Ge/MySlit12/HLX      = 2.5 cm        
+d:Ge/MySlit12/HLY      = 0.0254 cm
+d:Ge/MySlit12/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator    
+d:Ge/MySlit12/TransX   = 0.0 cm
+d:Ge/MySlit12/TransY   = -0.2286 cm
+d:Ge/MySlit12/TransZ   = 0.0 cm
+d:Ge/MySlit12/RotX     = 0.0 deg
+d:Ge/MySlit12/RotY     = 0.0 deg
+d:Ge/MySlit12/RotZ     = 0.0 deg
+s:Ge/MySlit12/DrawingStyle = "Solid"
+s:Ge/MySlit12/Color        = "transparentred"
+#b:Ge/MySlit12/Invisible = "True"
+
+
+
+#---------------- 13 Slit In The Collimator -------------------------------#
+s:Ge/MySlit13/Parent   = "MyCollimator"
+s:Ge/MySlit13/Type     = "TsBox"
+s:Ge/MySlit13/Material ="Air"
+d:Ge/MySlit13/HLX      = 2.5 cm        
+d:Ge/MySlit13/HLY      = 0.0254 cm
+d:Ge/MySlit13/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit13/TransX   = 0.0 cm
+d:Ge/MySlit13/TransY   = -0.381 cm
+d:Ge/MySlit13/TransZ   = 0.0 cm
+d:Ge/MySlit13/RotX     = 0.0 deg
+d:Ge/MySlit13/RotY     = 0.0 deg
+d:Ge/MySlit13/RotZ     = 0.0 deg
+s:Ge/MySlit13/DrawingStyle = "Solid"
+s:Ge/MySlit13/Color        = "transparentred"
+#b:Ge/MySlit13/Invisible = "True"
+
+#---------------- 14 Slit In The Collimator -------------------------------#
+s:Ge/MySlit14/Parent   = "MyCollimator"
+s:Ge/MySlit14/Type     = "TsBox"
+s:Ge/MySlit14/Material ="Air"
+d:Ge/MySlit14/HLX      = 2.5 cm        
+d:Ge/MySlit14/HLY      = 0.0254 cm
+d:Ge/MySlit14/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit14/TransX   = 0.0 cm
+d:Ge/MySlit14/TransY   = -0.5334 cm
+d:Ge/MySlit14/TransZ   = 0.0 cm
+d:Ge/MySlit14/RotX     = 0.0 deg
+d:Ge/MySlit14/RotY     = 0.0 deg
+d:Ge/MySlit14/RotZ     = 0.0 deg
+s:Ge/MySlit14/DrawingStyle = "Solid"
+s:Ge/MySlit14/Color        = "transparentred"
+#b:Ge/MySlit14/Invisible = "True"
+
+#---------------- 15 Slit In The Collimator -------------------------------#
+s:Ge/MySlit15/Parent   = "MyCollimator"
+s:Ge/MySlit15/Type     = "TsBox"
+s:Ge/MySlit15/Material ="Air"
+d:Ge/MySlit15/HLX      = 2.5 cm        
+d:Ge/MySlit15/HLY      = 0.0254 cm
+d:Ge/MySlit15/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit15/TransX   = 0.0 cm
+d:Ge/MySlit15/TransY   = -0.6858 cm
+d:Ge/MySlit15/TransZ   = 0.0 cm
+d:Ge/MySlit15/RotX     = 0.0 deg
+d:Ge/MySlit15/RotY     = 0.0 deg
+d:Ge/MySlit15/RotZ     = 0.0 deg
+s:Ge/MySlit15/DrawingStyle = "Solid"
+s:Ge/MySlit15/Color        = "transparentred"
+#b:Ge/MySlit15/Invisible = "True"
+
+#---------------- 16 Slit In The Collimator -------------------------------#
+s:Ge/MySlit16/Parent   = "MyCollimator"
+s:Ge/MySlit16/Type     = "TsBox"
+s:Ge/MySlit16/Material ="Air"
+d:Ge/MySlit16/HLX      = 2.5 cm        
+d:Ge/MySlit16/HLY      = 0.0254 cm
+d:Ge/MySlit16/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit16/TransX   = 0.0 cm
+d:Ge/MySlit16/TransY   = -0.8382 cm
+d:Ge/MySlit16/TransZ   = 0.0 cm
+d:Ge/MySlit16/RotX     = 0.0 deg
+d:Ge/MySlit16/RotY     = 0.0 deg
+d:Ge/MySlit16/RotZ     = 0.0 deg
+s:Ge/MySlit16/DrawingStyle = "Solid"
+s:Ge/MySlit16/Color        = "transparentred"
+#b:Ge/MySlit16/Invisible = "True"
+
+#---------------- 17 Slit In The Collimator -------------------------------#
+s:Ge/MySlit17/Parent   = "MyCollimator"
+s:Ge/MySlit17/Type     = "TsBox"
+s:Ge/MySlit17/Material ="Air"
+d:Ge/MySlit17/HLX      = 2.5 cm        
+d:Ge/MySlit17/HLY      = 0.0254 cm
+d:Ge/MySlit17/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit17/TransX   = 0.0 cm
+d:Ge/MySlit17/TransY   = -0.9906 cm
+d:Ge/MySlit17/TransZ   = 0.0 cm
+d:Ge/MySlit17/RotX     = 0.0 deg
+d:Ge/MySlit17/RotY     = 0.0 deg
+d:Ge/MySlit17/RotZ     = 0.0 deg
+s:Ge/MySlit17/DrawingStyle = "Solid"
+s:Ge/MySlit17/Color        = "transparentred"
+#b:Ge/MySlit17/Invisible = "True"
+
+#---------------- 18 Slit In The Collimator -------------------------------#
+s:Ge/MySlit18/Parent   = "MyCollimator"
+s:Ge/MySlit18/Type     = "TsBox"
+s:Ge/MySlit18/Material ="Air"
+d:Ge/MySlit18/HLX      = 2.5 cm        
+d:Ge/MySlit18/HLY      = 0.0254 cm
+d:Ge/MySlit18/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit18/TransX   = 0.0 cm
+d:Ge/MySlit18/TransY   = -1.143 cm
+d:Ge/MySlit18/TransZ   = 0.0 cm
+d:Ge/MySlit18/RotX     = 0.0 deg
+d:Ge/MySlit18/RotY     = 0.0 deg
+d:Ge/MySlit18/RotZ     = 0.0 deg
+s:Ge/MySlit18/DrawingStyle = "Solid"
+s:Ge/MySlit18/Color        = "transparentred"
+#b:Ge/MySlit18/Invisible = "True"
+
+#---------------- 19 Slit In The Collimator -------------------------------#
+s:Ge/MySlit19/Parent   = "MyCollimator"
+s:Ge/MySlit19/Type     = "TsBox"
+s:Ge/MySlit19/Material ="Air"
+d:Ge/MySlit19/HLX      = 2.5 cm        
+d:Ge/MySlit19/HLY      = 0.0254 cm
+d:Ge/MySlit19/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit19/TransX   = 0.0 cm
+d:Ge/MySlit19/TransY   = -1.2954 cm
+d:Ge/MySlit19/TransZ   = 0.0 cm
+d:Ge/MySlit19/RotX     = 0.0 deg
+d:Ge/MySlit19/RotY     = 0.0 deg
+d:Ge/MySlit19/RotZ     = 0.0 deg
+s:Ge/MySlit19/DrawingStyle = "Solid"
+s:Ge/MySlit19/Color        = "transparentred"
+#b:Ge/MySlit19/Invisible = "True"
+
+#---------------- 20 Slit In The Collimator -------------------------------#
+s:Ge/MySlit20/Parent   = "MyCollimator"
+s:Ge/MySlit20/Type     = "TsBox"
+s:Ge/MySlit20/Material ="Air"
+d:Ge/MySlit20/HLX      = 2.5 cm        
+d:Ge/MySlit20/HLY      = 0.0254 cm
+d:Ge/MySlit20/HLZ      = Ge/MyCollimator/HLZ cm # same height as Collimator   
+d:Ge/MySlit20/TransX   = 0.0 cm
+d:Ge/MySlit20/TransY   = -1.4478 cm
+d:Ge/MySlit20/TransZ   = 0.0 cm
+d:Ge/MySlit20/RotX     = 0.0 deg
+d:Ge/MySlit20/RotY     = 0.0 deg
+d:Ge/MySlit20/RotZ     = 0.0 deg
+s:Ge/MySlit20/DrawingStyle = "Solid"
+s:Ge/MySlit20/Color        = "transparentred"
+#b:Ge/MySlit20/Invisible = "True"
+
+
+#--------Defime the transparent colors--------------#
+iv:Gr/Color/transparentblue    = 4 50 50 255 80
+iv:Gr/Color/transparentgreen  = 4 0 255 0 150
+iv:Gr/Color/transparentyellow = 4 255 255 0 100
+iv:Gr/Color/transparentred    = 4 255 0 0 100
+
+
+
+#----- View
+s:Gr/ViewA/Type           = "OpenGL"
+#sv:Gr/ViewA/VisibleWorlds = 1 "All"
+#i:Gr/ViewA/WindowSizeX    = 900
+#i:Gr/ViewA/WindowSizeY    = 900
+#b:Gr/ViewA/IncludeAxes      = "True"
+#d:Gr/ViewA/Theta            = 90 deg
+#d:Gr/ViewA/Phi              = 0 deg
+#s:Gr/ViewA/Projection       = "Perspective"
+#d:Gr/ViewA/PerspectiveAngle = 0 deg
+#u:Gr/ViewA/Zoom             = 1.5
+

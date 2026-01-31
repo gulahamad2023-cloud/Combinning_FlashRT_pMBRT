@@ -1,0 +1,1028 @@
+includeFile = /home/ghamad/topas/examples/250MeV_Sim/TC_0.04_0.02.txt
+
+
+# ----- World dimensions
+s:Ge/World/Material  = "Air"
+d:Ge/World/HLX       = 6.5 cm
+d:Ge/World/HLY       = 4 cm 
+d:Ge/World/HLZ       = 42. cm
+#b:Ge/World/Invisible = "TRUE"
+
+#---- Beam position (S)
+s:Ge/BeamPosition/Parent="World"
+s:Ge/BeamPosition/Type="Group"
+d:Ge/BeamPosition/TransX=Tf/XPositionIncreasing/Value cm
+d:Ge/BeamPosition/TransY=Tf/YPositionIncreasing/Value cm
+d:Ge/BeamPosition/TransZ=0.42 m
+d:Ge/BeamPosition/RotX=180. deg
+d:Ge/BeamPosition/RotY=0. deg
+d:Ge/BeamPosition/RotZ=0. deg
+# Create a position that increases every 1 s (each time the X scan is completed).
+s:Tf/XPositionIncreasing/Function = "Step"
+dv:Tf/XPositionIncreasing/Times   = 225 1 2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225 s
+dv:Tf/XPositionIncreasing/Values  = 225 -1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.75
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.5
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1.25
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-1
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.75
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.5
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+-0.25
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.25
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.5
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+0.75
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.25
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.5
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75
+1.75 cm
+
+
+# Create a position that increases every 1 s (each time the Y scan is completed).
+s:Tf/YPositionIncreasing/Function = "Step"
+dv:Tf/YPositionIncreasing/Times   = 225 1. 2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225 s
+dv:Tf/YPositionIncreasing/Values  = 225 -1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75
+-1.75
+-1.5
+-1.25
+-1
+-0.75
+-0.5
+-0.25
+0
+0.25
+0.5
+0.75
+1
+1.25
+1.5
+1.75 cm
+
+# Declare that the simulation should contain 225 runs.
+i:Tf/NumberOfSequentialTimes = 225
+
+# Specify an end time for the run sequence.
+d:Tf/TimelineEnd = 225 s
+
+# Set verbosity to get more information about the runs.
+i:Tf/Verbosity = 2
+
+b:Ma/MyWater/BuildFromMaterials = "True"
+sv:Ma/MyWater/Components= 1 "G4_WATER"
+uv:Ma/MyWater/Fractions= 1 1
+d:Ma/MyWater/Density=1.0133 g/cm3
+s:Ma/MyWater/DefaultColor="indigo"
+#sv:Ph/Default/LayeredMassGeometryWorlds = 2 "WaterPhantom" "WaterBox0" 
+
+#--- water phantom
+s:Ge/WaterPhantom/Parent     = "World"
+s:Ge/WaterPhantom/Type       =  "TsBox"
+s:Ge/WaterPhantom/Material   = "G4_WATER"
+d:Ge/WaterPhantom/HLX        = 6.4 cm
+d:Ge/WaterPhantom/HLY        = 4 cm 
+d:Ge/WaterPhantom/HLZ        = 15 cm
+d:Ge/WaterPhantom/TransX     = 0 cm
+d:Ge/WaterPhantom/TransY     = 0. cm
+d:Ge/WaterPhantom/TransZ     = -15 cm
+d:Ge/WaterPhantom/RotX       = 0. deg
+d:Ge/WaterPhantom/RotY       = 0. deg
+d:Ge/WaterPhantom/RotZ       = 0. deg
+s:Ge/WaterPhantom/DrawingStyle = "Solid"
+s:Ge/WaterPhantom/Color        = "transparentblue"
+#b:Ge/WaterPhantom/isParallel = "True" 
+
+#--- water Box0
+s:Ge/WaterBox0/Parent     = "World"
+s:Ge/WaterBox0/Type       =  "TsBox"
+s:Ge/WaterBox0/Material   = "G4_WATER"
+d:Ge/WaterBox0/HLX        = 0.05 cm 
+d:Ge/WaterBox0/HLY        = 1.5748 cm 
+d:Ge/WaterBox0/HLZ        = 10. cm  
+d:Ge/WaterBox0/TransX     = 0. cm
+d:Ge/WaterBox0/TransY     = 0. cm
+d:Ge/WaterBox0/TransZ     = -10. cm
+d:Ge/WaterBox0/RotX       = 0. deg
+d:Ge/WaterBox0/RotY       = 0. deg
+d:Ge/WaterBox0/RotZ       = 0. deg
+s:Ge/WaterBox0/DrawingStyle = "Solid"
+s:Ge/WaterBox0/Color        = "blue"
+#b:Ge/WaterBox0/isParallel = "True"
+
+#----- Primary: Emittance beam 
+s:So/ProtonSource/Type = "emittance"
+s:So/ProtonSource/Component                = "BeamPosition" 
+s:So/ProtonSource/BeamParticle             = "proton"
+d:So/ProtonSource/BeamEnergy               = 248.8 MeV
+u:So/ProtonSource/BeamEnergySpread         = 0.2
+s:So/ProtonSource/Distribution = "BiGaussian"
+d:So/ProtonSource/SigmaX           = 2.54941 mm                
+u:So/ProtonSource/SigmaXprime      = 0.00305443             
+u:So/ProtonSource/CorrelationX     = 0.417838            
+d:So/ProtonSource/SigmaY           = 2.54941 mm              
+u:So/ProtonSource/SigmaYprime      = 0.00305443              
+u:So/ProtonSource/CorrelationY     = 0.417838  
+
+#---- Scorring
+s:Sc/DoseAtPhantom_Seed0/Quantity                       = "DoseToMedium"
+s:Sc/DoseAtPhantom_Seed0/Component                      = "WaterBox0"
+#b:Sc/DoseAtPhantom_Seed0/OutputToConsole                = "TRUE"
+s:Sc/DoseAtPhantom_Seed0/IfOutputFileAlreadyExists      = "Increment"
+#sv:Sc/DoseAtPhantom_Seed0/Report = 8 "Sum" "Mean" "Count_in_bin" "Second_Moment" "Variance" "Standard_Deviation" "Min" "Max"
+i:Sc/DoseAtPhantom_Seed0/ZBins=1000
+i:Sc/DoseAtPhantom_Seed0/Xbins=1
+i:Sc/DoseAtPhantom_Seed0/Ybins=500
+
+#---- Sequence
+i:Ts/NumberOfThreads = 80 # defaults to 1
+b:Ts/PauseBeforeQuit = "False"
+b:Ge/QuitIfOverlapDetected= "True"
+i:So/ProtonSource/NumberOfHistoriesInRun = 100
+i:Ts/ShowHistoryCountAtInterval = 100
+i:Ts/Seed = 1
+
+#---- physics
+sv:Ph/Default/Modules   = 6 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4decay" "g4ion-binarycascade" "g4h-elastic_HP" "g4stopping"
+
+#--------Defime the transparent colors--------------#
+iv:Gr/Color/transparentblue    = 4 50 50 255 80
+iv:Gr/Color/transparentgreen  = 4 0 255 0 150
+iv:Gr/Color/transparentyellow = 4 255 255 0 100
+iv:Gr/Color/transparentred    = 4 255 0 0 100
+
+
+#----- View
+#s:Gr/ViewA/Type           = "OpenGL"
+#sv:Gr/ViewA/VisibleWorlds = 1 "All"
+#i:Gr/ViewA/WindowSizeX    = 900
+#i:Gr/ViewA/WindowSizeY    = 900
+#b:Gr/ViewA/IncludeAxes      = "True"
+#d:Gr/ViewA/Theta            = 90 deg
+#d:Gr/ViewA/Phi              = 0 deg
+#s:Gr/ViewA/Projection       = "Perspective"
+#d:Gr/ViewA/PerspectiveAngle = 0 deg
+#u:Gr/ViewA/Zoom             = 1.5
+

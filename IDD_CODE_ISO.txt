@@ -1,0 +1,115 @@
+# Demonstrates use of Layered Mass Geometry,
+# a Geant4 feature whereby there can be material in a parallel world.
+
+# ----- World dimensions
+s:Ge/World/Material  = "Vacuum"
+d:Ge/World/HLX       = 2.0 m
+d:Ge/World/HLY       = 2.0 m
+d:Ge/World/HLZ       = 2.0 m
+#b:Ge/World/Invisible = "TRUE"
+
+#---- Beam position (S)
+s:Ge/BeamPosition/Parent="World"
+s:Ge/BeamPosition/Type="Group"
+d:Ge/BeamPosition/TransX=0 cm
+d:Ge/BeamPosition/TransY=0 cm
+d:Ge/BeamPosition/TransZ=0 cm
+d:Ge/BeamPosition/RotX=180. deg
+d:Ge/BeamPosition/RotY=0. deg
+d:Ge/BeamPosition/RotZ=0. deg
+
+#---- Some Geometry's needed 
+sv:Ph/Default/LayeredMassGeometryWorlds = 2 "WaterBox" "ChamberCylinder"
+
+#---- an air box that contains the water phantom, the chamber, and the beam. Basically from the snout to the end of the phantom.
+s:Ge/AirBox/Parent   = "World"
+s:Ge/AirBox/Type     = "TsBox"
+s:Ge/AirBox/Material = "Air"
+d:Ge/AirBox/HLX      = .5 m
+d:Ge/AirBox/HLY      = .5 m
+d:Ge/AirBox/HLZ      = 46 cm
+d:Ge/AirBox/TransX   = 0. m
+d:Ge/AirBox/TransY   = 0. m
+d:Ge/AirBox/TransZ   = -4 cm
+d:Ge/AirBox/RotX     = 0. deg
+d:Ge/AirBox/RotY     = 0. deg
+d:Ge/AirBox/RotZ     = 0. deg
+
+#--- Chamber
+s:Ge/ChamberCylinder/Parent     = "World"
+s:Ge/ChamberCylinder/Type       =  "TsCylinder"
+s:Ge/ChamberCylinder/Material   = "G4_WATER"
+d:Ge/ChamberCylinder/RMax       = 0.5 cm   #4.08 cm 
+d:Ge/ChamberCylinder/HL         = 0.2 m
+d:Ge/ChamberCylinder/TransX     = 0. m
+d:Ge/ChamberCylinder/TransY     = 0. m
+d:Ge/ChamberCylinder/TransZ     = -0.2 m
+d:Ge/ChamberCylinder/RotX       = 0. deg
+d:Ge/ChamberCylinder/RotY       = 0. deg
+d:Ge/ChamberCylinder/RotZ       = 0. deg
+b:Ge/ChamberCylinder/isParallel = "True"
+
+#--- water phantom
+s:Ge/WaterBox/Parent     = "World"
+s:Ge/WaterBox/Type       =  "TsBox"
+s:Ge/WaterBox/Material   = "G4_WATER"
+d:Ge/WaterBox/HLX        = .5 m
+d:Ge/WaterBox/HLY        = .5 m
+d:Ge/WaterBox/HLZ        = .205 m
+d:Ge/WaterBox/TransX     = 0. m
+d:Ge/WaterBox/TransY     = 0. m
+d:Ge/WaterBox/TransZ     = -.205 m
+d:Ge/WaterBox/RotX       = 0. deg
+d:Ge/WaterBox/RotY       = 0. deg
+d:Ge/WaterBox/RotZ       = 0. deg
+b:Ge/WaterBox/isParallel = "True"
+
+# the snout can move continuously from 3 to 42 cm from the isocenter
+
+#----- Primary: Emittance beam 
+s:So/ProtonSource/Type = "emittance"
+s:So/ProtonSource/Component                = "BeamPosition" 
+s:So/ProtonSource/BeamParticle             = "proton"
+d:So/ProtonSource/BeamEnergy               = 248.8 MeV
+u:So/ProtonSource/BeamEnergySpread         = 0.2
+s:So/ProtonSource/Distribution = "BiGaussian"
+d:So/ProtonSource/SigmaX           = 3.29824 mm               
+u:So/ProtonSource/SigmaXprime      = 0.00305443             
+u:So/ProtonSource/CorrelationX     = 0.711927            
+d:So/ProtonSource/SigmaY           = 3.14631 mm              
+u:So/ProtonSource/SigmaYprime      = 0.00301438              
+u:So/ProtonSource/CorrelationY     = 0.237984     
+
+
+#---- Scorring
+s:Sc/DoseAtPhantom_Seed1/Quantity                       = "DoseToMedium"
+s:Sc/DoseAtPhantom_Seed1/Component                      = "ChamberCylinder"
+#b:Sc/DoseAtPhantom_Seed1/OutputToConsole                = "TRUE"
+s:Sc/DoseAtPhantom_Seed1/IfOutputFileAlreadyExists      = "Overwrite"
+i:Sc/DoseAtPhantom_Seed1/Xbins=1
+i:Sc/DoseAtPhantom_Seed1/Ybins=1
+i:Sc/DoseAtPhantom_Seed1/Zbins=1000
+
+#---- Sequence
+i:Ts/NumberOfThreads = 50 # defaults to 1
+b:Ts/PauseBeforeQuit = "False"
+b:Ge/QuitIfOverlapDetected= "False"
+i:So/ProtonSource/NumberOfHistoriesInRun = 20000000
+i:Ts/ShowHistoryCountAtInterval = 1000000
+i:Ts/Seed = 1
+
+#---- physics
+sv:Ph/Default/Modules   = 6 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4decay" "g4ion-binarycascade" "g4h-elastic_HP" "g4stopping"
+
+#----- View
+#s:Gr/ViewA/Type           = "OpenGL"
+#sv:Gr/ViewA/VisibleWorlds = 1 "All"
+#i:Gr/ViewA/WindowSizeX    = 900
+#i:Gr/ViewA/WindowSizeY    = 900
+#b:Gr/ViewA/IncludeAxes      = "True"
+#d:Gr/ViewA/Theta            = 90 deg
+#d:Gr/ViewA/Phi              = 0 deg
+#s:Gr/ViewA/Projection       = "Perspective"
+#d:Gr/ViewA/PerspectiveAngle = 0 deg
+#u:Gr/ViewA/Zoom             = 1.5
+
